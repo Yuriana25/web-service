@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Gallery</title>
+</head>
+<body>
+<h1>Uploaded Images</h1>
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" required>
+    <button type="submit">Upload</button>
+</form>
+<h2>Images:</h2>
+    <div>
+         <ul>
+<!--          Отображение загруженных изображений -->
+             <div th:each="image : ${images}">
+                 <li>
+                     <!--  /*@thymesVar id="image" type="com.syvodid.webservice.Image"*/-->
+                     <img th:src="@{${image.imagePath}}" alt="Image">
+                 </li>
+             </div>
+        </ul>
+    </div>
+</body>
+</html>
