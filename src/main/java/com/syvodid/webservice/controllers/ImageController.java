@@ -1,9 +1,11 @@
-package com.syvodid.webservice;
+package com.syvodid.webservice.controllers;
 
+import com.syvodid.webservice.ImageService;
+import com.syvodid.webservice.models.Image;
+import com.syvodid.webservice.repo.ImageRepository;
 import net.coobird.thumbnailator.Thumbnails;
-import org.springframework.core.io.Resource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ResourceLoader;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +19,9 @@ import java.util.List;
 @Controller
 @RequestMapping("/")
 public class ImageController {
+
+    @Autowired
+    private ImageRepository imageRepository;
 
     private final ImageService imageService;
     private final ResourceLoader resourceLoader;

@@ -1,5 +1,7 @@
 package com.syvodid.webservice;
 
+import com.syvodid.webservice.models.Image;
+import com.syvodid.webservice.repo.ImageRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

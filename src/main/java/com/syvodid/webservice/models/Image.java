@@ -1,4 +1,4 @@
-package com.syvodid.webservice;
+package com.syvodid.webservice.models;
 
 import jakarta.persistence.*;
 import lombok.Getter;

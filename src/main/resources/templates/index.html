@@ -16,7 +16,7 @@
 <!--          Отображение загруженных изображений -->
              <div th:each="image : ${images}">
                  <li>
-                     <!--  /*@thymesVar id="image" type="com.syvodid.webservice.Image"*/-->
+                     <!--  /*@thymesVar id="image" type="com.syvodid.webservice.models.Image"*/-->
                      <img th:src="@{${image.imagePath}}" alt="Image">
                  </li>
              </div>
