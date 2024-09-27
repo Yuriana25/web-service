@@ -17,20 +17,17 @@ import java.io.IOException;
 import java.util.List;
 
 @Controller
-@RequestMapping("/")
 public class ImageController {
 
     @Autowired
     private ImageRepository imageRepository;
 
     private final ImageService imageService;
-    private final ResourceLoader resourceLoader;
     private static final Logger logger = Logger.getLogger(ImageController.class.getName());
-    private final String UPLOAD_DIR = "C:/Users/Olena/IdeaProjects/web-service/uploads/";
+    private static final String UPLOAD_DIR = System.getenv("UPLOAD_DIR");
 
     public ImageController(ImageService imageService, ResourceLoader resourceLoader) {
         this.imageService = imageService;
-        this.resourceLoader = resourceLoader;
     }
 
     @GetMapping("/")

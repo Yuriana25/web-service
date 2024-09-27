@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   web-service:
     build: .
@@ -9,6 +7,10 @@ services:
       SPRING_DATASOURCE_URL: jdbc:sqlserver://db:1433;databaseName=web-service
       SPRING_DATASOURCE_USERNAME: SA
       SPRING_DATASOURCE_PASSWORD: 123
+      UPLOAD_DIR: /app/uploads
+    volumes:
+      - uploads:/app/uploads
+      - .:/app
     depends_on:
       - db
 
@@ -24,3 +26,4 @@ services:
 
 volumes:
   sql_data:
+  uploads:
